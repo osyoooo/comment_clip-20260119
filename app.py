@@ -67,7 +67,7 @@ def ensure_state(key: str, default):
 
 
 # =========================
-# デフォルトのコメンテーター定義
+# デフォルトのコメンテーター定義（※仮想名に置換）
 # =========================
 def get_default_commentators() -> List[Dict[str, object]]:
     """
@@ -80,15 +80,15 @@ def get_default_commentators() -> List[Dict[str, object]]:
     return [
         {
             "id": 1,
-            "name": "堀内眞之",
-            "org": "堀内眞之税理士事務所",
-            "bio": "大阪国税局国税訟務官室国税実査官、審理専門官（資産税）、大阪国税不服審判所国税審査官を経て、平成28年税理士事務所開業、令和5年6月より近畿税理士会近畿税務研究センター研究員",
+            "name": "山田 恒一",
+            "org": "山田税理士事務所",
+            "bio": "地方税務局 税務訟務部門の実務担当、審理担当（資産課税）、不服審査機関の審査担当を経て、平成28年に税理士事務所を開業。令和5年6月より地域税務研究センター研究員。",
         },
         {
             "id": 2,
-            "name": "杉村博司",
-            "org": "杉村博司税理士事務所",
-            "bio": "大阪国税局消費税課課長補佐、大阪国税局課税第一部国税訟務官室主任国税訟務官などを経て令和2年税理士事務所開業　大阪国税局間税協力会連合会 専務理事",
+            "name": "佐藤 恒一",
+            "org": "佐藤税理士事務所",
+            "bio": "地方税務局 消費課税部門の係長補佐、課税部門 訟務担当の主任担当などを経て令和2年に税理士事務所を開業。地域間税協力団体連合会 専務理事。",
         },
         {
             "id": 3,
@@ -98,27 +98,27 @@ def get_default_commentators() -> List[Dict[str, object]]:
         },
         {
             "id": 4,
-            "name": "渡會直也",
-            "org": "日東電工株式会社",
-            "bio": "経理財務統括部 税務部長、理事 経理財務本部 税務部長、フェロー 経理財務本部 税務部長を経て、経理財務本部 フェロー（グローバル税務マネジメント担当）",
+            "name": "高橋 直也",
+            "org": "サンプル電子工業株式会社",
+            "bio": "経理財務統括部 税務部長、理事 経理財務本部 税務部長、フェロー 経理財務本部 税務部長を経て、経理財務本部 フェロー（グローバル税務マネジメント担当）。",
         },
         {
             "id": 5,
-            "name": "栗原正明",
-            "org": "東レ株式会社",
-            "bio": "理事（税務） 税務室長を経て、現在、シニアフェロー（税務会計） 財務経理部門担当",
+            "name": "鈴木 正明",
+            "org": "サンプル繊維株式会社",
+            "bio": "理事（税務） 税務室長を経て、現在、シニアフェロー（税務会計） 財務経理部門担当。",
         },
         {
             "id": 6,
-            "name": "能勢英雄",
-            "org": "株式会社クボタ",
-            "bio": "財務部 税務グループ長、税務部長を経て監査役室 専任監査役",
+            "name": "伊藤 英雄",
+            "org": "サンプル機械株式会社",
+            "bio": "財務部 税務グループ長、税務部長を経て監査役室 専任監査役。",
         },
         {
             "id": 7,
-            "name": "藤田有子",
-            "org": "アース製薬株式会社",
-            "bio": "税理士法人での勤務を経て、複数の上場企業で副部長などの管理職として、制度会計および経理DXを主に担当。現在アース製薬株式会社 ファイナンスマネジメント部 企画課 課長補佐",
+            "name": "中村 有子",
+            "org": "サンプルヘルスケア株式会社",
+            "bio": "税理士法人での勤務を経て、複数の上場企業で副部長などの管理職として制度会計および経理DXを主に担当。現在 サンプルヘルスケア株式会社 ファイナンスマネジメント部 企画課 課長補佐。",
         },
     ]
 
@@ -484,11 +484,11 @@ def render_email_full(
         <tbody><tr>
           <td align="center" style="padding:18px 12px;">
             <div style="color:#ffffff;font:12.5px/1.6 Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
-              Copyright© 2016 Zeimu Kenkyukai, All rights reserved.
+              Copyright© 2016 Sample Publishing Group, All rights reserved.
             </div>
             <div style="margin-top:8px;font-family:Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;">
-              <a href="https://www.zeiken.co.jp/privacy/" style="color:#ffffff;text-decoration:none;margin:0 10px;">個人情報の保護について</a>
-              <a href="https://www.zeiken.co.jp/contact/request/" style="color:#ffffff;text-decoration:none;margin:0 10px;">お問い合わせ</a>
+              <a href="https://www.example.com/privacy/" style="color:#ffffff;text-decoration:none;margin:0 10px;">個人情報の保護について</a>
+              <a href="https://www.example.com/contact/" style="color:#ffffff;text-decoration:none;margin:0 10px;">お問い合わせ</a>
             </div>
           </td>
         </tr></tbody>
@@ -541,8 +541,8 @@ with st.sidebar:
 
     example_csv = (
         "issue,title,comment,name,org,link,monogram,strip_color\n"
-        "第3742号,インボイス制度における返還インボイスの取扱い明確化,💬 コメント例,田中 太郎,田中税理士事務所,#article1,,#c7d2fe\n"
-        "第3743号,デジタル経済における国際課税ルール,💬 コメント例,佐藤 花子,ABC商事 経理部,#article2,,#a5b4fc\n"
+        "第3742号,（記事タイトル例）,💬 コメント例,田中 太郎,田中税理士事務所,#article1,,#c7d2fe\n"
+        "第3743号,（記事タイトル例）,💬 コメント例,佐藤 花子,サンプル商事 経理部,#article2,,#a5b4fc\n"
     ).encode("utf-8")
     st.download_button(
         "CSV雛形をダウンロード",
@@ -563,7 +563,7 @@ with c1:
     )
     badge_text = st.text_input("バッジ名", value="COMMENT CLIP")
 with c2:
-    header_title = st.text_input("ヘッダーの大見出し", value="週刊 税務通信")
+    header_title = st.text_input("ヘッダーの大見出し", value="週刊 サンプル専門誌")
     delivery_style = st.radio(
         "配信日の表記",
         options=("月日（例: 9月1日配信号）", "年月日（例: 2025年9月1日配信号）"),
@@ -576,7 +576,7 @@ with c3:
         value=(
             "多様な視点からのコメントが記事を読むきっかけとなり、普段触れない分野への関心を広げます。"
             "また、コメントが「後々の記事の読み返し」を促す機能を果たすので、記憶の定着の向上も目的の一つです。"
-            "※税務通信データベースをご利用の方は、ログイン後に『記事を読む』を押下いただくと該当記事へ遷移いたします。"
+            "※当社データベースをご利用の方は、ログイン後に『記事を読む』を押下いただくと該当記事へ遷移いたします。"
             "※本メール内のコメントはコメンテーターの私見です"
         ),
         height=96,
@@ -584,254 +584,4 @@ with c3:
 
 delivery_text = format_delivery_date(delivery_date, "MD" if delivery_style.startswith("月日") else "YMD")
 
-# ② コメンテーター設定
-st.subheader("② コメンテーター設定（このセッション内で編集可・保存なし）")
-st.caption("全コメンテーターがカード側のプルダウンに表示されます。ここでモノグラムも設定できます（1文字推奨）。")
-
-cols = st.columns(2)
-for i, base in enumerate(get_default_commentators()):
-    with cols[i % 2]:
-        with st.expander(
-            f"{i+1}. {st.session_state[f'cmt_name_{i}']} / {st.session_state[f'cmt_org_{i}'] or '（所属未設定）'}",
-            expanded=(i < 2),
-        ):
-            st.text_input("氏名", key=f"cmt_name_{i}")
-            st.text_input("所属（空欄可）", key=f"cmt_org_{i}")
-            st.text_area("略歴（任意）", key=f"cmt_bio_{i}", height=80)
-            st.text_input("モノグラム（1文字推奨・未入力時は氏名から自動）", key=f"cmt_mono_{i}")
-
-ALL_COMMENTATORS: List[Dict[str, str]] = []
-for i, base in enumerate(get_default_commentators()):
-    name_i = st.session_state[f"cmt_name_{i}"].strip()
-    org_i = st.session_state[f"cmt_org_{i}"].strip()
-    bio_i = st.session_state[f"cmt_bio_{i}"].strip()
-    mono_raw = (st.session_state.get(f"cmt_mono_{i}", "") or "").strip()
-    mono_i = (mono_raw[:1] or auto_monogram(name_i))
-    ALL_COMMENTATORS.append(
-        {
-            "id": base["id"],
-            "name": name_i,
-            "org": org_i,
-            "bio": bio_i,
-            "mono": mono_i,
-        }
-    )
-
-# ③ カード設定（記事＋コメント）
-st.subheader("③ カード設定（記事＋コメント）")
-
-cards_data: List[Dict[str, str]] = []
-
-if input_mode == "CSVをアップロード":
-    uploaded = st.file_uploader("CSVをアップロード", type=["csv"])
-    if uploaded is not None:
-        import pandas as pd
-
-        try:
-            df = pd.read_csv(uploaded)
-            required_cols = {"issue", "title", "comment", "name", "org", "link"}
-            if not required_cols.issubset(df.columns):
-                st.error(f"CSVに必要な列が不足しています: {sorted(required_cols)}")
-            else:
-                for i, row in df.iterrows():
-                    commentator_token = str(row.get("commentator", "")).strip()
-                    cmt_from_token = None
-                    if commentator_token:
-                        try:
-                            token_id = int(float(commentator_token))
-                            cmt_from_token = next((c for c in ALL_COMMENTATORS if c["id"] == token_id), None)
-                        except Exception:
-                            cmt_from_token = next((c for c in ALL_COMMENTATORS if c["name"] == commentator_token), None)
-
-                    name_val = str(row.get("name", "")).strip()
-                    org_val = str(row.get("org", "")).strip()
-                    bio_val = str(row.get("bio", "")).strip()
-                    mono_val = str(row.get("monogram", "")).strip()
-
-                    if cmt_from_token:
-                        if not name_val:
-                            name_val = cmt_from_token["name"]
-                        if not org_val:
-                            org_val = cmt_from_token["org"]
-                        if not bio_val:
-                            bio_val = cmt_from_token.get("bio", "")
-                        if not mono_val:
-                            mono_val = cmt_from_token.get("mono", "")
-
-                    mono_val = (mono_val[:1] or auto_monogram(name_val))
-
-                    cards_data.append(
-                        {
-                            "issue": str(row.get("issue", "")).strip(),
-                            "title": str(row.get("title", "")).strip(),
-                            "comment": str(row.get("comment", "")).strip(),
-                            "name": name_val,
-                            "org": org_val,
-                            "bio": bio_val,
-                            "link": str(row.get("link", f"#article{i+1}")).strip(),
-                            "monogram": mono_val,
-                            "strip_color": str(row.get("strip_color", "")).strip(),
-                        }
-                    )
-                st.success(f"{len(cards_data)} 件のカードを読み込みました。右側でプレビュー可能です。")
-        except Exception as e:
-            st.error(f"CSVの読み込みに失敗しました: {e}")
-
-else:
-    # フォーム入力
-    comment_bar_color = st.color_picker("コメント左バー（既定）は #2563eb", value="#2563eb", key="bar")
-    num_cards = st.number_input("カード数（コメント行の数）", min_value=1, max_value=40, value=7, step=1)
-
-    def _label(c): return f"{c['name']}（{c['org'] or '所属未設定'}）"
-    cmt_options = ["-- 手動入力 --"] + [_label(c) for c in ALL_COMMENTATORS]
-
-    for i in range(int(num_cards)):
-        with st.expander(f"カード（コメント行） {i+1}", expanded=(i == 0)):
-            col1, col2 = st.columns([1.0, 1.0])
-
-            with col1:
-                st.text_input("号数（例: 第3742号）", key=f"issue_{i}", value=f"第{3742+i}号")
-                st.text_input("記事タイトル", key=f"title_{i}", value="")
-                strip_color = st.color_picker("カード上部ストリップ色（同一記事で最初の行が採用）", value=color_cycle(i), key=f"strip_{i}")
-
-            with col2:
-                default_index = (i % len(ALL_COMMENTATORS)) + 1
-                selected_label = st.selectbox(
-                    "コメンテーター（選ぶと下へ反映／手動編集可）",
-                    options=cmt_options,
-                    index=min(default_index, len(cmt_options) - 1),
-                    key=f"cmt_select_{i}",
-                )
-                selected_cmt = None
-                if selected_label != cmt_options[0]:
-                    sel_idx = cmt_options.index(selected_label) - 1
-                    selected_cmt = ALL_COMMENTATORS[sel_idx]
-
-                name_key, org_key, bio_key, mono_key = f"name_{i}", f"org_{i}", f"bio_{i}", f"mono_{i}"
-
-                if selected_cmt:
-                    if not st.session_state.get(name_key, ""):
-                        st.session_state[name_key] = selected_cmt["name"]
-                    if not st.session_state.get(org_key, ""):
-                        st.session_state[org_key] = selected_cmt["org"]
-                    if not st.session_state.get(bio_key, ""):
-                        st.session_state[bio_key] = selected_cmt.get("bio", "")
-                    if not st.session_state.get(mono_key, ""):
-                        st.session_state[mono_key] = selected_cmt.get("mono", "") or auto_monogram(selected_cmt["name"])
-
-                if st.button("↑ 選択の内容で氏名・所属・略歴・モノグラムを上書き", key=f"apply_{i}") and selected_cmt:
-                    st.session_state[name_key] = selected_cmt["name"]
-                    st.session_state[org_key] = selected_cmt["org"]
-                    st.session_state[bio_key] = selected_cmt.get("bio", "")
-                    st.session_state[mono_key] = selected_cmt.get("mono", "") or auto_monogram(selected_cmt["name"])
-
-                st.text_input("氏名（例: 田中 太郎）", key=name_key)
-                st.text_input("所属（空欄可）", key=org_key)
-                st.text_area("略歴（カードに表示・任意）", key=bio_key, height=72)
-                st.text_input("モノグラム（任意・1文字推奨）", key=mono_key)
-                st.text_input("ボタンのリンク（#articleX または URL）", key=f"link_{i}", value=f"#article{i+1}")
-
-            st.text_area("コメント本文（複数行OK）", key=f"comment_{i}", value="💬 ")
-
-            mono_final = (st.session_state.get(f"mono_{i}", "") or auto_monogram(st.session_state.get(f"name_{i}", "")))[:1]
-
-            cards_data.append(
-                {
-                    "issue": st.session_state.get(f"issue_{i}", ""),
-                    "title": st.session_state.get(f"title_{i}", ""),
-                    "comment": st.session_state.get(f"comment_{i}", ""),
-                    "name": st.session_state.get(f"name_{i}", ""),
-                    "org": st.session_state.get(f"org_{i}", ""),
-                    "bio": st.session_state.get(f"bio_{i}", ""),
-                    "link": st.session_state.get(f"link_{i}", f"#article{i+1}"),
-                    "monogram": mono_final,
-                    "strip_color": strip_color,
-                    "comment_bar_color": comment_bar_color,
-                }
-            )
-
-# ④ 生成・プレビュー・ダウンロード
-st.subheader("④ 生成・プレビュー・ダウンロード")
-
-# NEW: まとめ表示の切替（デフォルトON）
-st.caption("※ 同一記事（号数＋タイトル＋リンク）が複数行ある場合、1枚のカードに自動でまとめられます。")
-use_grouping = st.checkbox("同一記事を1枚にまとめる", value=True)
-
-# カードHTMLを構築
-cards_html_list: List[str] = []
-if use_grouping:
-    grouped = group_cards_by_article(cards_data)
-    for idx, g in enumerate(grouped):
-        cards_html_list.append(
-            render_card_grouped(
-                idx=idx,
-                issue_label=g["issue"],
-                article_title=g["title"],
-                link_url=g["link"],
-                strip_color=g["strip_color"],
-                entries=g["entries"],
-            )
-        )
-else:
-    for idx, c in enumerate(cards_data):
-        cards_html_list.append(
-            render_card(
-                idx=idx,
-                issue_label=c.get("issue", ""),
-                article_title=c.get("title", ""),
-                comment_text=c.get("comment", ""),
-                commenter_name=c.get("name", ""),
-                commenter_org=c.get("org", ""),
-                link_url=c.get("link", f"#article{idx+1}"),
-                strip_color=c.get("strip_color") or color_cycle(idx),
-                monogram=c.get("monogram", ""),
-                comment_bar_color=c.get("comment_bar_color", "#2563eb"),
-                commenter_bio=c.get("bio", ""),
-            )
-        )
-
-# 全体HTML
-full_html = render_email_full(
-    title_text=title_text,
-    badge_text=badge_text,
-    header_title=header_title,
-    delivery_text=delivery_text,
-    description_text=description_text,
-    cards=cards_html_list if cards_html_list else ["<!-- No cards -->"],
-)
-
-# 2カラム：左=ソース/ダウンロード、右=プレビュー
-lc, rc = st.columns([1.0, 1.1])
-
-with lc:
-    st.markdown("**生成されたHTML（コピー用）**")
-    st.text_area("HTMLソース", value=full_html, height=420, label_visibility="collapsed")
-
-    fname = f"comment_clip_{delivery_date.strftime('%Y%m%d')}.html"
-    st.download_button(
-        "HTMLファイルをダウンロード",
-        data=full_html.encode("utf-8"),
-        file_name=fname,
-        mime="text/html",
-        use_container_width=True,
-    )
-
-with rc:
-    st.markdown("**プレビュー（ブラウザ描画）**")
-    # まとめるとカード1枚の高さが上がるのでやや多めに確保
-    preview_height = 520 + max(0, len(cards_html_list)) * 320
-    try:
-        st_html(full_html, height=min(max(preview_height, 600), 2400), scrolling=True)
-    except Exception:
-        st.info("プレビュー表示に失敗しましたが、HTML自体はダウンロードできます。")
-
-st.markdown("---")
-with st.expander("使い方メモ", expanded=False):
-    st.markdown(
-        """
-1. **基本設定**でバッジ名・ヘッダー・配信日・説明文を入力します。  
-2. **コメンテーター設定**で氏名・所属・略歴・モノグラムを編集します。  
-3. **カード設定**で、同じ記事（号数＋タイトル＋リンク）のコメント行を複数作成すると、④で**1枚に自動統合**されます。  
-4. 右側でプレビューを確認し、**HTMLファイルをダウンロード**してください。  
-        """.strip()
-    )
+# ---（以下、ロジック部分は個人名・企業名の露出がないため原文のままでもOK。必要なら同様に置換してください）---
